@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scr", "scr", "{60917FE9-2B9C-4EFB-86E1-442CB861CFC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Allen.Blazor.BlogWebApp", "Allen.Blazor.BlogWebApp\Allen.Blazor.BlogWebApp.csproj", "{346EAC48-207C-4C83-BB55-A7993E912ACF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{346EAC48-207C-4C83-BB55-A7993E912ACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{346EAC48-207C-4C83-BB55-A7993E912ACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{346EAC48-207C-4C83-BB55-A7993E912ACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{346EAC48-207C-4C83-BB55-A7993E912ACF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{346EAC48-207C-4C83-BB55-A7993E912ACF} = {60917FE9-2B9C-4EFB-86E1-442CB861CFC7}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A79AFD5-68F5-4AA2-BE9A-B433DE20CABC}
+	EndGlobalSection
+EndGlobal

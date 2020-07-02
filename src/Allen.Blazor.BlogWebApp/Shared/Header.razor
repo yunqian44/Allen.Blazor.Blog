@@ -1,6 +1,6 @@
 ﻿<!-- Header.razor -->
 <header>
-    @*<nav class="navbar">
+    <nav class="navbar">
         <div class="container">
             <div class="navbar-header header-logo">
                 <NavLink class="menu-item" href="/" Match="NavLinkMatch.All">
@@ -11,10 +11,57 @@
                 <NavLink class="menu-item" href="posts">Posts</NavLink>
                 <NavLink class="menu-item" href="categories">Categories</NavLink>
                 <NavLink class="menu-item" href="tags">Tags</NavLink>
-                <NavLink class="menu-item apps" href="apps">Apps</NavLink>
-                <input id="switch_default" type="checkbox" class="switch_default" />
+                <NavLink class="menu-item" href="apps">Apps</NavLink>
+                <input id="switch_default" type="checkbox" class="switch_default" @onchange="SwitchTheme" checked="@(currentTheme == "Dark")" />
                 <label for="switch_default" class="toggleBtn"></label>
             </div>
         </div>
-    </nav>*@
+    </nav>
+    <nav class="navbar-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <NavLink class="menu-item" href="" Match="NavLinkMatch.All">😂Allen Master</NavLink>
+                    <NavLink>&nbsp;·&nbsp;Light</NavLink>
+                </div>
+                <div class="menu-toggle">&#9776; Menu</div>
+            </div>
+            <div class="menu">
+                <NavLink class="menu-item" href="posts">Posts</NavLink>
+                <NavLink class="menu-item" href="categories">Categories</NavLink>
+                <NavLink class="menu-item" href="tags">Tags</NavLink>
+                <NavLink class="menu-item apps" href="apps">Apps</NavLink>
+            </div>
+        </div>
+    </nav>
 </header>
+
+@code {
+    /// <summary>
+    /// 当前主题
+    /// </summary>
+    private string currentTheme;
+
+    /// <summary>
+    /// 初始化
+    /// </summary>
+    /// <returns></returns>
+    protected override async Task OnInitializedAsync()
+    {
+        currentTheme = await Common.GetStorageAsync("theme") ?? "Light";
+
+        await Common.InvokeAsync("window.func.switchTheme");
+    }
+
+    /// <summary>
+    /// 切换主题
+    /// </summary>
+    private async Task SwitchTheme()
+    {
+        currentTheme = currentTheme == "Light" ? "Dark" : "Light";
+
+        await Common.SetStorageAsync("theme", currentTheme);
+
+        await Common.InvokeAsync("window.func.switchTheme");
+    }
+}

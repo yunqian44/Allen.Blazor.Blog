@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Allen.Blazor.BlogWebApp.Commons;
 
 namespace Allen.Blazor.BlogWebApp
 {
@@ -18,6 +19,8 @@ namespace Allen.Blazor.BlogWebApp
             builder.RootComponents.Add<App>("app");
 
             builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+
+            builder.Services.AddSingleton(typeof(Common));
 
             await builder.Build().RunAsync();
         }

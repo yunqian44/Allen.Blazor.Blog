@@ -1,0 +1,41 @@
+﻿@page "/tags"
+
+@if (tags == null)
+{
+    <Loading />
+}
+else
+{
+    <div class="post-wrap tags">
+        <h2 class="post-title">-&nbsp;Tags&nbsp;-</h2>
+        <div class="tag-cloud-tags">
+            @if (tags.Success && tags.Data.Any())
+            {
+                @foreach (var item in tags.Data)
+                {
+                    <a href="/tag/@item.DisplayName/">@item.TagName<small>(@item.Count)</small></a>
+                }
+            }
+            else
+            {
+                <ErrorTip />
+            }
+        </div>
+    </div>
+}
+
+@code{
+    /// <summary>
+    /// tags
+    /// </summary>
+    private ServiceResult<IEnumerable<QueryTagViewModel>> tags;
+
+    /// <summary>
+    /// 初始化
+    /// </summary>
+    protected override async Task OnInitializedAsync()
+    {
+        // 获取数据
+        tags = await Http.GetFromJsonAsync<ServiceResult<IEnumerable<QueryTagViewModel>>>($"/blog/tags");
+    }
+}

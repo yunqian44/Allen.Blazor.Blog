@@ -36,6 +36,19 @@ else
     protected override async Task OnInitializedAsync()
     {
         // 获取数据
-        tags = await Http.GetFromJsonAsync<ServiceResult<IEnumerable<QueryTagViewModel>>>($"/blog/tags");
+        //tags = await Http.GetFromJsonAsync<ServiceResult<IEnumerable<QueryTagViewModel>>>($"/blog/tags");
+
+        var s = new List<QueryTagViewModel>();
+        s.Add(new QueryTagViewModel() { Count = 10, DisplayName = "Net Core", TagName = "Net Core" });
+        s.Add(new QueryTagViewModel() { Count = 10, DisplayName = "Azure", TagName = "Azure" });
+        s.Add(new QueryTagViewModel() { Count = 10, DisplayName = "AWS", TagName = "AWS" });
+        s.Add(new QueryTagViewModel() { Count = 10, DisplayName = "Java", TagName = "Java" });
+
+        tags = new ServiceResult<IEnumerable<QueryTagViewModel>>();
+
+        tags.Data = s;
+
+
+
     }
 }

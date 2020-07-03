@@ -18,7 +18,12 @@ namespace Allen.Blazor.BlogWebApp
             var builder = WebAssemblyHostBuilder.CreateDefault(args);
             builder.RootComponents.Add<App>("app");
 
-            builder.Services.AddTransient(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            var baseAddress = "https://api2.meowv.com";
+
+            builder.Services.AddTransient(sp => new HttpClient
+            {
+                BaseAddress = new Uri(baseAddress)
+            });
 
             builder.Services.AddSingleton(typeof(Common));
 

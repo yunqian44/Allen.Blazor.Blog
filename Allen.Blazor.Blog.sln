@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scr", "scr", "{60917FE9-2B9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Allen.Blazor.BlogWebApp", "src\Allen.Blazor.BlogWebApp\Allen.Blazor.BlogWebApp.csproj", "{22FB42C5-5910-49C4-BFC6-46072FF624AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Allen.Blazor.TerraFormCloudCraft", "Allen.Blazor.TerraFormCloudCraft\Allen.Blazor.TerraFormCloudCraft.csproj", "{AA2A8E88-3C3F-413E-8758-FBC047CDC563}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,12 +19,17 @@ Global
 		{22FB42C5-5910-49C4-BFC6-46072FF624AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{22FB42C5-5910-49C4-BFC6-46072FF624AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{22FB42C5-5910-49C4-BFC6-46072FF624AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA2A8E88-3C3F-413E-8758-FBC047CDC563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA2A8E88-3C3F-413E-8758-FBC047CDC563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA2A8E88-3C3F-413E-8758-FBC047CDC563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA2A8E88-3C3F-413E-8758-FBC047CDC563}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{22FB42C5-5910-49C4-BFC6-46072FF624AD} = {60917FE9-2B9C-4EFB-86E1-442CB861CFC7}
+		{AA2A8E88-3C3F-413E-8758-FBC047CDC563} = {60917FE9-2B9C-4EFB-86E1-442CB861CFC7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A79AFD5-68F5-4AA2-BE9A-B433DE20CABC}
